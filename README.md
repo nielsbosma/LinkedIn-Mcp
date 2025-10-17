@@ -104,42 +104,6 @@ The tool returns LinkedIn profile data in YAML format, including:
 - **Certifications**: Professional certifications and licenses
 - **Languages**: Language proficiencies
 
-## Development
-
-### Building from source
-
-```bash
-git clone <repository-url>
-cd LinkedIn-Mcp
-dotnet restore
-dotnet build
-```
-
-### Running locally
-
-```bash
-dotnet run
-```
-
-### Packaging
-
-```bash
-dotnet pack --configuration Release
-```
-
-## Publishing
-
-Releases are automatically published to NuGet when a new GitHub release is created with a tag in the format `v1.0.0`.
-
-1. Create a new tag: `git tag v1.0.0`
-2. Push the tag: `git push origin v1.0.0`
-3. Create a GitHub release using the tag
-4. The GitHub Action will automatically build and publish to NuGet
-
-## License
-
-MIT
-
 ## Credits
 
 This tool uses the [Apify LinkedIn Profile Scraper](https://apify.com/dev_fusion/Linkedin-Profile-Scraper) API to fetch LinkedIn profile data.
