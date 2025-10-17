@@ -24,7 +24,8 @@ public class LinkedinService
     {
         _httpClient = new HttpClient
         {
-            BaseAddress = new Uri("https://api.apify.com/v2/")
+            BaseAddress = new Uri("https://api.apify.com/v2/"),
+            Timeout = TimeSpan.FromMinutes(5) // Apify scraping can take time
         };
         _apiKey = Environment.GetEnvironmentVariable("APIFY_TOKEN");
     }

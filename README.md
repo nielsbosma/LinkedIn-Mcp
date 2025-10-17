@@ -5,7 +5,7 @@ A Model Context Protocol (MCP) server for fetching LinkedIn profiles via the Api
 ## Prerequisites
 
 - .NET 9.0 or later
-- An Apify API token ([Get one here](https://apify.com/dev_fusion/Linkedin-Profile-Scraper))
+- An Apify API token ([Get one here](https://apify.com/))
 
 ## Installation
 
@@ -80,11 +80,39 @@ Fetches a LinkedIn profile and returns it in YAML format.
 
 **Parameters:**
 - `profile_url` (required): The LinkedIn profile URL
+- `include` (optional): Array of optional sections to include in the output. If not specified, all sections are included.
+
+**Available optional sections:**
+- `experiences` - Work experience history
+- `updates` - Recent activity and posts
+- `profilePicAllDimensions` - All profile picture dimensions
+- `skills` - Skills and endorsements
+- `educations` - Educational background
+- `licenseAndCertificates` - Professional certifications
+- `honorsAndAwards` - Honors and awards
+- `languages` - Language proficiencies
+- `volunteerAndAwards` - Volunteer work
+- `verifications` - Profile verifications
+- `promos` - Promotional content
+- `highlights` - Profile highlights
+- `projects` - Projects
+- `publications` - Publications
+- `patents` - Patents
+- `courses` - Courses
+- `testScores` - Test scores
+- `organizations` - Organizations
+- `volunteerCauses` - Volunteer causes
+- `interests` - Interests
+- `recommendations` - Recommendations
+
+**Note:** Basic profile fields (name, headline, location, summary, etc.) are always included regardless of the `include` parameter.
 
 **Example prompts:**
 - "Fetch the LinkedIn profile for https://www.linkedin.com/in/username"
 - "Get me the profile information for this LinkedIn URL: https://www.linkedin.com/in/username"
 - "Show me the work experience from https://www.linkedin.com/in/username"
+- "Fetch the profile but only include experiences and skills sections"
+- "Get the profile with just educations and certifications"
 
 **Supported URL formats:**
 - `https://www.linkedin.com/in/username`
@@ -94,16 +122,22 @@ Fetches a LinkedIn profile and returns it in YAML format.
 
 ## Output Format
 
-The tool returns LinkedIn profile data in YAML format, including:
+The tool returns LinkedIn profile data in YAML format.
 
+**Always included fields:**
 - **Personal Information**: Name, headline, location, profile picture
 - **Professional Summary**: About/summary section
+- **Contact Information**: LinkedIn URL, public identifier
+
+**Optional sections** (included by default, can be filtered with the `include` parameter):
 - **Work Experience**: Job titles, companies, dates, descriptions
 - **Education**: Schools, degrees, fields of study
-- **Skills**: List of professional skills
+- **Skills**: List of professional skills and endorsements
 - **Certifications**: Professional certifications and licenses
 - **Languages**: Language proficiencies
+- **Projects**: Personal and professional projects
+- **Publications**: Published works
+- **Patents**: Patent information
+- **And more**: Updates, honors, awards, recommendations, etc.
 
-## Credits
-
-This tool uses the [Apify LinkedIn Profile Scraper](https://apify.com/dev_fusion/Linkedin-Profile-Scraper) API to fetch LinkedIn profile data.
+Use the `include` parameter to fetch only the sections you need, reducing response size and processing time.
