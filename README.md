@@ -1,6 +1,6 @@
 # LinkedIn MCP Server
 
-A Model Context Protocol (MCP) server for fetching LinkedIn profiles via the Apify LinkedIn Profile Scraper API. Returns profile data in YAML format.
+A Model Context Protocol (MCP) server for fetching LinkedIn profiles. Returns profile data in YAML format.
 
 ## Prerequisites
 
@@ -119,25 +119,3 @@ Fetches a LinkedIn profile and returns it in YAML format.
 - `https://linkedin.com/in/username`
 - `http://www.linkedin.com/in/username`
 - `linkedin.com/in/username`
-
-## Output Format
-
-The tool returns LinkedIn profile data in YAML format.
-
-**Always included fields:**
-- **Personal Information**: Name, headline, location, profile picture
-- **Professional Summary**: About/summary section
-- **Contact Information**: LinkedIn URL, public identifier
-
-**Optional sections** (included by default, can be filtered with the `include` parameter):
-- **Work Experience**: Job titles, companies, dates, descriptions
-- **Education**: Schools, degrees, fields of study
-- **Skills**: List of professional skills and endorsements
-- **Certifications**: Professional certifications and licenses
-- **Languages**: Language proficiencies
-- **Projects**: Personal and professional projects
-- **Publications**: Published works
-- **Patents**: Patent information
-- **And more**: Updates, honors, awards, recommendations, etc.
-
-Use the `include` parameter to fetch only the sections you need, reducing response size and processing time.
