@@ -262,7 +262,7 @@ public class McpServer
         var profileJson = await _linkedinService.GetProfileJsonAsync(profileUrl, cancellationToken);
         if (string.IsNullOrEmpty(profileJson))
         {
-            throw new InvalidOperationException("Failed to fetch LinkedIn profile. Check your APIFY_TOKEN and ensure the profile URL is valid.");
+            throw new InvalidOperationException("Failed to fetch LinkedIn profile. Check your APIFY_TOKEN (https://www.apify.com?fpr=ual7wl) and ensure the profile URL is valid.");
         }
 
         await Console.Error.WriteLineAsync("[INFO] Profile fetched successfully, converting to YAML...");

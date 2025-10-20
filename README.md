@@ -5,7 +5,7 @@ A Model Context Protocol (MCP) server for fetching LinkedIn profiles. Returns pr
 ## Prerequisites
 
 - .NET 9.0 or later
-- An Apify API token ([Get one here](https://apify.com/))
+- An Apify API token ([Get one here](https://www.apify.com?fpr=ual7wl))
 
 ## Installation
 
